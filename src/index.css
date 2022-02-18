@@ -13,5 +13,12 @@ code {
 }
 
 main {
-  text-align: center;
+  margin: 20px;
+}
+
+.alert {
+  padding: 2px;
+  margin-bottom: 0;
+  width: fit-content;
+  font-size: 13px;
 }
