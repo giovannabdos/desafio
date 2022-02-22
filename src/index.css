@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;800;900&family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
 }
 
 code {
@@ -21,4 +22,113 @@ main {
   margin-bottom: 0;
   width: fit-content;
   font-size: 13px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: #fff;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  --bs-table-accent-bg: #fafafa;
+}
+
+.table-hover > tbody > tr:hover > * {
+  --bs-table-accent-bg: #f1f8fc;
+}
+
+.users-table {
+  box-shadow: 0px 2px 6px 3px #cccccc;
+  border-radius: 5px;
+  padding-left: 5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.last-line {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+th,
+td {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: gray;
+}
+
+th {
+  padding: 10px 16px !important;
+}
+
+td {
+  padding: 6px 16px !important;
+}
+
+tr {
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  color: gray;
+}
+
+.alert-primary {
+  color: #7fadcf;
+  background-color: #dbf7ff;
+  border: unset;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.alert {
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.delete {
+  margin-left: 10px;
+}
+
+.form-check-input:checked {
+  background-color: #33cccc;
+  border-color: #33cccc;
+}
+
+.form-check-input:not(:checked) {
+  border-color: #33cccc;
+  border-width: 2px;
+}
+
+.dropdown-header {
+  color: #70708c;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.form-check-label {
+  color: gray;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.form-check {
+  margin-left: 15px;
+}
+
+.dropdown-divider {
+  border-color: #a1a1a1;
+  margin: 12px 16px 4px 16px;
+}
+
+.threeDots {
+  text-align: right;
+}
+
+.nav-link {
+  padding: 0;
 }
