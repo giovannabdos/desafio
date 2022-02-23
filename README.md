@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# Desafio front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Instalação
 
-## Available Scripts
+Execute o comando `npm install` para instalar os pacotes necessários.
 
-In the project directory, you can run:
+# Executar o projeto
 
-### `npm start`
+Execute o comando `npm start` para iniciar o projeto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Tabela
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Na tabela é possível ver e excluir os usuários da API https://jsonplaceholder.typicode.com.
 
-### `npm test`
+# Tecnologias e pacotes utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React.js
+- Typescript
+- React Bootstrap
+- React Icons
 
-### `npm run build`
+# Funcionalidades
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- A tabela por padrão contém 5 colunas (Usuário, Email, Cliente, Perfil de acesso e ações).
+- Ao clicar no ícone X, o usuário é deletado da lista.
+  ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945760983903764490/unknown.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Ao clicar no ícone dos 3 pontos, um dropdown apararecerá para o usuário controlar as colunas que vão parecer e a quantidade de usuários.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945761087763148870/unknown.png)
 
-### `npm run eject`
+  ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945761124975009832/unknown.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Explicação do Código
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## useEffect
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- O useEffect foi usado juntamente com a variável `padrao` como dependência para que toda vez que a varíavel sofra uma alteração, a lista de usuários seja chamada novamente.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945765552012533791/unknown.png)
 
-## Learn More
+## uso do Slice na requisição da API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. A função `Slice` do javascript foi usada porque a API não proporciona a passagem de parâmetros para limitar a quantidade de usuários, como por exemplo: `?limit=5` ou `?limit=10?`.
+2. Com o `Slice` foi possível pegar a quantidade desejada de usuários na lista de acordo com a quantidade de linhas salva na variável `padrao`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945763572804358184/unknown.png)
+
+## Deletar usuário
+
+1. Quando o usuário clica no ícone X em qualquer linha está sendo passado os dados do usuário para a função de deletar usuário.
+2. Com os dados do usuário é possível usar a função `filter` do javascript para retirar o usuário da lista que esteja com o mesmo `ID` do que foi passado ao clicar no ícone.
+
+   ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945764591575642223/unknown.png)
+
+   ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945764592066363423/unknown.png)
+
+## "Dropdown as={NavItem}" e "Dropdown.Toggle as={NavLink}":
+
+1. Foi usado dessa forma por que na documentação do React-Bootstrap em [Dropdown](https://react-bootstrap.github.io/components/dropdowns/) todos os exemplos obtidos lá eram com botões.
+2. Entretanto em [Navs - Using Dropdowns](https://react-bootstrap.github.io/components/navs/#using-dropdowns), há um exemplo que ficou melhor para o caso.
+3. Com o exemplo implementado, ainda assim não ficou totalmente do jeito que eu queria, pois estava aparecendo do lado do ícone a seta para visualizar o dropdown.
+4. Portanto para remover a seta utilizei o CSS conforme a imagem abaixo.
+
+   ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945767472370425856/unknown.png)
+
+   ![Alt paisagem](https://media.discordapp.net/attachments/886987574239977512/945767968871182356/unknown.png)
